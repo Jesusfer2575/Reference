@@ -13,7 +13,7 @@ procedure BFS(G,v) is
 		end if
 		for all edges e in G.adjacentEdges(t) loop
 			u ← G.adjacentVertex(t,e)
-			if u is not in V then // If visited
+			if u is not in V then // If not visited
 				add u to V // Mark as visited
 				enqueue u onto Q
 			end if
