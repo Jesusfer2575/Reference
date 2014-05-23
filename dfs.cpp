@@ -1,7 +1,7 @@
-//Implementacion de Algoritmo de Kruskal o MST(Minimum Spanning Tree)
+//Implementacion de Algoritmo de DFS (Depth First Search) o BÃºsqueda en amplitud
 /*
- Creado por: Adrián de Jesús Fernández Ramírez
- Implementación en c++
+ Creado por: Adriï¿½n de Jesï¿½s Fernï¿½ndez Ramï¿½rez
+ Implementaciï¿½n en c++
  12/03/2014
 */
 #include<iostream>
