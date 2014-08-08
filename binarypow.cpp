@@ -1,16 +1,15 @@
 #include<stdio.h>
 #define lli long long int 
 
-lli binarypow(lli n, lli k){
-      if(k==1) return n; 
-      else{
-         if(k%2==0)
-            return binarypow(n, k/2) * binarypow(n,k/2); 
-
-         else
-            return n * binarypow(n, k-1);
-
-      }   
+lli binarypow(lli a,lli b) {
+    lli res = 1;
+    while(b){
+        if(b % 2)
+            res *= a;
+        a *= a;
+        b /= 2;
+    }
+    return res;
 }
 int main(){
    lli n,base;
