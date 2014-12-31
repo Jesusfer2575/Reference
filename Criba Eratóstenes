@@ -6,9 +6,9 @@ int n;
 bool noprimo[MAX];
 
 void criba(int n){
-	for(int i=2;i<sqrt(n);i++){
+	for(int i=2;i<=sqrt(n);i++){
 		if(!noprimo[i])
-			for(int j=i;j<(n/i);j+=i)
+			for(int j=i;j<=(n/i);j++)
 				noprimo[i*j] = true;
 	}
 }
