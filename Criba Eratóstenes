@@ -1,0 +1,23 @@
+//Added by Adrian Fernandez
+#include<iostream>
+#include<cmath>
+#define MAX 10000007
+int n;
+bool noprimo[MAX];
+
+void criba(int n){
+	for(int i=2;i<sqrt(n);i++){
+		if(!noprimo[i])
+			for(int j=i;j<(n/i);j+=i)
+				noprimo[i*j] = true;
+	}
+}
+
+int main(){
+	std::cin>>n;
+	criba(n);
+	for(int i=2;i<=n;i++)
+		if(!noprimo[i])
+			std::cout<<i<<" ";
+	std::cout<<"\n";
+}
