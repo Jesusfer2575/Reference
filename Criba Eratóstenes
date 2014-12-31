@@ -2,7 +2,7 @@
 #include<iostream>
 #include<cmath>
 #define MAX 10000007
-int n;
+int n,maxprim;
 bool noprimo[MAX];
 
 void criba(int n){
@@ -16,8 +16,12 @@ void criba(int n){
 int main(){
 	std::cin>>n;
 	criba(n);
-	for(int i=2;i<=n;i++)
+	/*for(int i=2;i<=n;i++)
 		if(!noprimo[i])
-			std::cout<<i<<" ";
-	std::cout<<"\n";
+			std::cout<<i<<" ";*/
+	for(int i=2;i<=n;i++)
+		if(!noprimo[i] && maxprim<i)
+			maxprim = i;
+	
+	std::cout<<maxprim<<"\n";
 }
