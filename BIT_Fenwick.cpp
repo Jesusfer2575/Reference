@@ -19,15 +19,18 @@ int main(){
  return 0;
 }
  
-int query(int a){
- if(a==0)
-    return 0;
- return BIT[a] + query(a-(a&-a));
+int query(int idx){
+ int sum = 0;
+ while(idx>0){
+    sum += BIT[idx];
+    idx -= (idx&(-idx));
+ }
+ return sum;
 }
  
-int update(int i,int a){
- if(i>n)
-    return 0;
- BIT[i] += a;
- return update(i+(i&-i),a);
+int update(int idx,int a){
+ while(idx<=n){
+    BIT[idx] += a;
+    idx += (idx&-idx);
+ }
 }
