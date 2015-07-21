@@ -5,8 +5,8 @@ lli binarypow(lli a,lli b) {
     lli res = 1;
     while(b){
         if(b % 2)
-            res *= a;
-        a *= a;
+            res = res*a;
+        a = a*a;
         b /= 2;
     }
     return res;
