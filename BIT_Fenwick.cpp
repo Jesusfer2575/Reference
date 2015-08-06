@@ -15,7 +15,7 @@ int main(){
  for(int i=1;i<=n;i++)
     printf("%d\n",BIT[i]);
  scanf("%d %d",&a,&b);
- printf("%d\n",query(a)+query(b-1));
+ printf("%d\n",query(b) - query(a-1));
  return 0;
 }
  
