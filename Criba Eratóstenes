@@ -4,12 +4,16 @@
 #define MAX 10000007
 int n,maxprim;
 bool noprimo[MAX];
+vector<int> Primos;
 
 void criba(int n){
-	for(int i=2;i<=sqrt(n);i++){
-		if(!noprimo[i])
-			for(int j=i;j<=(n/i);j++)
-				noprimo[i*j] = true;
+	int limit = (int)sqrt(n);
+	for(int i=2;i<=limit;i++){
+		if(!noprimo[i]){
+			for(int j=i*i;j<=n;j+=i)
+				noprimo[j] = true;
+			Primos.push_back(i);
+		}
 	}
 }
 
