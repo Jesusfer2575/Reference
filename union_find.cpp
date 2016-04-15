@@ -16,14 +16,10 @@ int raiz(int a){
 	return padre[a] = raiz(padre[a]);
 }
 void unir(int a,int b){
-	int raizA = raiz(a);
-	int raizB = raiz(b);
-	padre[raizA]=raizB;
+	padre[raiz(a)]=raiz(b);
 }
 bool mismo(int a, int b){
-	if(raiz(a)==raiz(b))
-	   return true;
-	return false;
+	return (raiz(a)==raiz(b)) ? true:false;
 }
 int E,N;
 int main(){
