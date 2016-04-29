@@ -1,7 +1,7 @@
 //Implementacion de Algoritmo de DFS (Depth First Search) o Búsqueda en amplitud
 /*
- Creado por: Adri�n de Jes�s Fern�ndez Ram�rez
- Implementaci�n en c++
+ Creado por: Adrian de Jesus Fernandez Ramirez
+ Implementacion en c++
  12/03/2014
 */
 #include<iostream>
