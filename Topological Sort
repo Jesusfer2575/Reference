@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+#define MAX 1000002
+using namespace std;
+int visitados[MAX];
+vector<int>grafo[MAX];
+vector<int>collection;
+bool impossible = false;
+
+void dfs(int nodo){
+	visitados[nodo] = true;
+	for(int i=0;i<grafo[nodo].size();i++){
+		int node = grafo[nodo][i];
+		if(!visitados[node])
+			dfs(node);
+		else 
+			if(visitados[node] == 1)
+			impossible = true;
+	}
+	visitados[nodo] = 2;
+	collection.push_back(nodo);
+}
+
+int main(){
+	while(1){
+		int n,e;
+		scanf("%d%d",&n,&e);
+		if (!n && !e)break;
+		impossible = false;
+		for(int i=0;i<=n;i++){
+			visitados[i] = 0;
+			grafo[i].clear();
+		}
+		collection.clear();
+		for(int i=1;i<=e;i++){
+			int x,y;
+			scanf("%d%d",&x,&y);
+			grafo[x].push_back(y);
+		}
+		int j=0;
+		for(int i=1;i<=n;i++)
+			if(!visitados[i])
+				dfs(i);	
+		
+		reverse(collection.begin(),collection.end());
+		if(impossible)
+			printf("IMPOSSIBLE\n");
+		else{
+			for(int i=0;i<collection.size();i++)
+				printf("%d\n",collection[i]);
+		}
+		
+	}
+
+}
