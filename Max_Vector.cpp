@@ -1,5 +1,5 @@
 /*
- Principio de inclusión exclusión para vector Maximum subarray problem
+ Kadaneâ€™s Algorithm
 */
 #include<stdio.h>
 #include<limits.h>
