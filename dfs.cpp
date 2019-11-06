@@ -1,4 +1,4 @@
-//Implementacion de Algoritmo de DFS (Depth First Search) o Búsqueda en amplitud
+//Implementacion de Algoritmo de DFS (Depth First Search) o Búsqueda en profundidad
 /*
  Creado por: Adrian de Jesus Fernandez Ramirez
  Implementacion en c++
