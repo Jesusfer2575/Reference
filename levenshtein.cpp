@@ -32,29 +32,24 @@ int LevenshteinDistance(char str1[1..lenStr1], char str2[1..lenStr2])
  
 using namespace std;
  
-int levenshtein(const string &s1, const string &s2)
-{
-   int N1 = s1.size();
-   int N2 = s2.size();
-   int i, j;
-   vector<int> T(N2+1);
- 
-   for ( i = 0; i <= N2; i++ )
-      T[i] = i;
- 
-   for ( i = 0; i < N1; i++ ) 
-   {
-      T[0] = i+1;
-      int corner = i;
-      for ( j = 0; j < N2; j++ ) 
-      {
-         int upper = T[j+1];
-         if ( s1[i] == s2[j] )
-            T[j+1] = corner;
-         else
-            T[j+1] = min(T[j], min(upper, corner)) + 1;
-         corner = upper;
-      }
-   }
-   return T[N2];
+int Levenshtein(string s1, string s2) {
+	int n = s1.length();
+	int m = s2.length();
+	
+	for (int i = 0; i <= n; i++)
+		dp[i][0] = i;
+	for (int i = 0; i <= m; i++)
+		dp[0][i] = i;
+
+	int cost = 0;
+	for (int i = 1; i <= n; i++) {
+		for (int j = 1; j <= m; j++) {
+			cost = (s1[j - 1] == s2[i - 1]) ? 0 : 1;
+			
+			dp[i][j] = min(dp[i][j - 1]+1, //Deletion
+					   min(dp[i - 1][j]+1, //Insertion
+						   dp[i - 1][j - 1] + cost)); //Substitution
+		}
+	}
+	return dp[n][m];
 }
